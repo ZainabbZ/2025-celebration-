@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonne Année, Baptiste!</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #4e342e, #795548);
+            color: #e6e3e1;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #d4a373;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 10px 0 30px;
+            color: #b7b4b1;
+        }
+
+        /* Quotes Section */
+        .quotes {
+            background: #3e2723;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            width: 80%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .quotes h2 {
+            font-size: 2rem;
+            color: #d7a673;
+        }
+
+        .quote {
+            margin: 20px 0;
+            font-size: 1.5rem;
+            color: #e6e3e1;
+        }
+
+        .quote span {
+            display: block;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 10px;
+            color: #b7b4b1;
+        }
+
+        /* Spider Flower */
+        .flower-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 50px 0;
+        }
+
+        .spider-flower {
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+
+        .spider-flower::before,
+        .spider-flower::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #d32f2f 0%, transparent 70%);
+            border-radius: 50%;
+            animation: bloom 3s ease-in-out infinite alternate;
+        }
+
+        .spider-flower::after {
+            transform: rotate(45deg);
+        }
+
+        @keyframes bloom {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .flower-text {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #d7a673;
+            font-style: italic;
+        }
+
+        /* Button */
+        button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #d4a373;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b08968;
+        }
+
+        /* Surprise Section */
+        .surprise {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .cat {
+            width: 120px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .quote-display {
+            font-size: 1.8rem;
+            color: #f5ebe0;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .signature {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #d4a373;
+        }
+
+        /* Snow and Rain */
+        .falling {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .falling div {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bonne Année, Baptiste! 🎉 2025</h1>
+        <p class="subtitle">“Le bonheur est parfois caché dans l'inconnu.” – Victor Hugo</p>
+    </header>
+    <main>
+        <section class="flower-container">
+            <div class="spider-flower"></div>
+            <p class="flower-text">It's supposed to be your &lt;Lycoris rouges&gt;, but damn, it's so hard to design!</p>
+        </section>
+        <section class="quotes">
+            <h2>Inspirations</h2>
+            <div class="quote">
+                <p>“Dans la vie, il n’y a pas de solution, il y a des forces en marche.”</p>
+                <span>– Albert Camus</span>
+            </div>
+            <div class="quote">
+                <p>“Le seul moyen de lutter contre l’injustice, c’est de vivre pour la justice.”</p>
+                <span>– Fyodor Dostoevsky</span>
+            </div>
+            <div class="quote">
+                <p>“Il n’y a qu’un bonheur dans la vie, c’est d’aimer et d’être aimé.”</p>
+                <span>– George Sand</span>
+            </div>
+            <div class="quote">
+                <p>“La vie est belle, il suffit de savoir la regarder.”</p>
+                <span>– Jean-Paul Sartre</span>
+            </div>
+            <div class="quote">
+                <p>“Nous ne sommes jamais aussi vivants que lorsque nous croyons en l’impossible.”</p>
+                <span>– Franz Kafka</span>
+            </div>
+            <div class="quote">
+                <p>“L’amour est un voyage sans fin, et chaque moment passé avec toi est un infini.”</p>
+                <span>– David Foenkinos, Je Vais Mieux</span>
+            </div>
+        </section>
+        <button id="surpriseBtn">Press for a Surprise!</button>
+        <div class="surprise">
+            <img src="https://media.tenor.com/bfp6uu8UZHMAAAAM/adorable-cat.gif" alt="Cute Cat" class="cat">
+            <p class="quote-display">"to my rare xy, i wish you all the success and happiness in ur life, don't be f depressed!"</p>
+            <p class="signature">– Rare XX</p>
+        </div>
+    </main>
+    <div class="falling"></div>
+    <script>
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const fallingContainer = document.querySelector('.falling');
+
+        // Generate Falling Snow
+        for (let i = 0; i < 100; i++) {
+            const flake = document.createElement('div');
+            flake.style.left = `${Math.random() * 100}vw`;
+            flake.style.animationDelay = `${Math.random() * 5}s`;
+            flake.style.animationDuration = `${5 + Math.random() * 5}s`;
+            fallingContainer.appendChild(flake);
+        }
+
+        // Button Event
+        surpriseBtn.addEventListener('click', () => {
+            document.querySelector('.surprise').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
