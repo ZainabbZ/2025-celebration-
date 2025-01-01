@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonne Année, Baptiste!</title>
+    <title>Bonne Année, Baptiste! 🎉</title>
     <style>
         /* Global Styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #4e342e, #795548);
-            color: #e6e3e1;
+            font-family: 'Cormorant Garamond', serif;
+            background: url('https://i.pinimg.com/564x/4f/4f/5b/4f4f5b7e9b06d4c758c9d4dd46da4e3b.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #e0e0e0;
             text-align: center;
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(34, 24, 19, 0.9); /* Deep brown overlay */
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+            z-index: -1;
         }
 
         header {
@@ -22,137 +42,103 @@
 
         h1 {
             font-size: 3.5rem;
-            color: #d4a373;
+            color: #c49a6d; /* Warm gold */
+            font-family: 'Cinzel', serif;
+            margin-bottom: 15px;
         }
 
         .subtitle {
             font-size: 1.5rem;
             font-style: italic;
-            margin: 10px 0 30px;
-            color: #b7b4b1;
+            margin: 10px 0 20px;
+            color: #bdbdbd;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Sections */
+        section {
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(51, 43, 36, 0.85); /* Rich brown background for sections */
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+            width: 70%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #c49a6d;
+            font-family: 'Cinzel', serif;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #e0e0e0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Encouraging Messages */
+        .encouragement {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #bdbdbd;
+            margin: 10px 0;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         /* Quotes Section */
-        .quotes {
-            background: #3e2723;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 30px auto;
-            width: 80%;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .quotes h2 {
-            font-size: 2rem;
-            color: #d7a673;
-        }
-
         .quote {
-            margin: 20px 0;
-            font-size: 1.5rem;
-            color: #e6e3e1;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #bdbdbd;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .quote span {
             display: block;
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-top: 10px;
-            color: #b7b4b1;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            color: #c49a6d;
+            font-family: 'Cinzel', serif;
         }
 
-        /* Spider Flower */
-        .flower-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 50px 0;
-        }
-
-        .spider-flower {
-            width: 150px;
-            height: 150px;
-            position: relative;
-        }
-
-        .spider-flower::before,
-        .spider-flower::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, #d32f2f 0%, transparent 70%);
-            border-radius: 50%;
-            animation: bloom 3s ease-in-out infinite alternate;
-        }
-
-        .spider-flower::after {
-            transform: rotate(45deg);
-        }
-
-        @keyframes bloom {
-            0% {
-                transform: scale(0.5);
-                opacity: 0.7;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .flower-text {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: #d7a673;
-            font-style: italic;
+        /* Images */
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
         }
 
         /* Button */
         button {
-            padding: 15px 30px;
+            padding: 12px 24px;
             font-size: 1rem;
-            color: #fff;
-            background-color: #d4a373;
-            border: none;
-            border-radius: 8px;
+            color: #c49a6d; /* Warm gold text */
+            background-color: transparent; /* Transparent background */
+            border: 2px solid #c49a6d; /* Gold border */
+            border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
         }
 
         button:hover {
-            background-color: #b08968;
+            background-color: #c49a6d; /* Gold background on hover */
+            color: #2c2c2c; /* Dark text on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
         }
 
-        /* Surprise Section */
-        .surprise {
-            display: none;
-            margin-top: 30px;
-        }
-
-        .cat {
-            width: 120px;
-            height: auto;
-            margin: 20px auto;
-        }
-
-        .quote-display {
-            font-size: 1.8rem;
-            color: #f5ebe0;
-            margin-top: 20px;
-            line-height: 1.5;
-        }
-
-        .signature {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #d4a373;
-        }
-
-        /* Snow and Rain */
-        .falling {
+        /* Snowflakes */
+        .snowflakes {
             position: fixed;
             top: 0;
             left: 0;
@@ -162,7 +148,7 @@
             z-index: 0;
         }
 
-        .falling div {
+        .snowflake {
             position: absolute;
             top: -10px;
             width: 10px;
@@ -178,87 +164,202 @@
                 transform: translateY(110vh);
             }
         }
+
+        /* Hidden Surprise */
+        .surprise {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .surprise img {
+            width: 150px;
+            height: auto;
+        }
+
+        .surprise p {
+            font-size: 1rem;
+            color: #e0e0e0;
+            font-family: 'Cormorant Garamond', serif;
+            margin-top: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                width: 80%;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            section {
+                width: 90%;
+            }
+        }
     </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Bonne Année, Baptiste! 🎉 2025</h1>
-        <p class="subtitle">“Le bonheur est parfois caché dans l'inconnu.” – Victor Hugo</p>
+        <h1>Bonne Année, Baptiste! 🎉</h1>
+        <p class="subtitle">"To my rare XY – may 2025 be as magical as you are! :) <3"</p>
     </header>
-    <main>
-        <section class="flower-container">
-            <div class="spider-flower"></div>
-            <p class="flower-text">It's supposed to be your &lt;Lycoris rouges&gt;, but damn, it's so hard to design!</p>
-        </section>
-        <section class="quotes">
-            <h2>Inspirations</h2>
-            <div class="quote">
-                <p>“Dans la vie, il n’y a pas de solution, il y a des forces en marche.”</p>
-                <span>– Albert Camus</span>
-            </div>
-            <div class="quote">
-                <p>“Le seul moyen de lutter contre l’injustice, c’est de vivre pour la justice.”</p>
-                <span>– Fyodor Dostoevsky</span>
-            </div>
-            <div class="quote">
-                <p>“Il n’y a qu’un bonheur dans la vie, c’est d’aimer et d’être aimé.”</p>
-                <span>– George Sand</span>
-            </div>
-            <div class="quote">
-                <p>“La vie est belle, il suffit de savoir la regarder.”</p>
-                <span>– Jean-Paul Sartre</span>
-            </div>
-            <div class="quote">
-                <p>“Nous ne sommes jamais aussi vivants que lorsque nous croyons en l’impossible.”</p>
-                <span>– Franz Kafka</span>
-            </div>
-            <div class="quote">
-                <p>“L’amour est un voyage sans fin, et chaque moment passé avec toi est un infini.”</p>
-                <span>– David Foenkinos, Je Vais Mieux</span>
-            </div>
-        </section>
-        <button id="surpriseBtn">Press for a Surprise!</button>
-        <div class="surprise">
-            <img src="https://media.tenor.com/bfp6uu8UZHMAAAAM/adorable-cat.gif" alt="Cute Cat" class="cat">
-            <p class="quote-display">"to my rare xy, i wish you all the success and happiness in ur life, don't be f depressed!"</p>
-            <p class="signature">– Rare XX</p>
-        </div>
-    </main>
-    <div class="falling"></div>
 
-    <!-- Audio for Snowman -->
-    <audio id="snowmanAudio" loop>
-        <source src="https://www.dropbox.com/scl/fi/jdoh66d0ofobz4zh0j32p/Sia_-_Snowman_-Official_Video-MP3_160K.mp3?rlkey=1bz0mjk4juogh2su67t6k1sdx&st=018yfyqu&dl=0" type="audio/mp3">
+    <!-- Literature Section -->
+    <section>
+        <h2>Literature & Philosophy 📚</h2>
+        <p>To the boy who finds solace in the words of Albert Camus, Dostoevsky, and Franz Kafka – may their wisdom always guide you.</p>
+        <div class="quote">
+            <p>"Au milieu de l'hiver, j'ai découvert en moi un invincible été."</p>
+            <span>– Albert Camus</span>
+        </div>
+        <div class="quote">
+            <p>"Vivre sans espoir, c'est cesser de vivre."</p>
+            <span>– Fyodor Dostoevsky</span>
+        </div>
+        <div class="quote">
+            <p>"Commence par ce qui est juste plutôt que par ce qui est acceptable."</p>
+            <span>– Franz Kafka</span>
+        </div>
+        <div class="quote">
+            <p>"La vie est un livre, et ceux qui ne voyagent pas n'en lisent qu'une page."</p>
+            <span>– Saint Augustin</span>
+        </div>
+        <div class="quote">
+            <p>"L'avenir appartient à ceux qui croient en la beauté de leurs rêves."</p>
+            <span>– Eleanor Roosevelt</span>
+        </div>
+        <div class="quote">
+            <p>"Soyez le changement que vous voulez voir dans le monde."</p>
+            <span>– Mahatma Gandhi</span>
+        </div>
+        <p class="encouragement">"Baptiste, your love for literature and philosophy inspires me. Keep seeking wisdom and beauty in every word. :) <3"</p>
+    </section>
+
+    <!-- Anime Section -->
+    <section>
+        <h2>Anime 🎌</h2>
+        <p>For the boy who loves "I Want to Eat Your Pancreas" and "Demon Slayer" – may their stories remind you of the beauty and strength within you.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuVjA6GMQbwr9W3pwKB-XmD7QGZeQWMJS0MA&usqp=CAU" alt="Demon Slayer">
+        <p class="encouragement">"Like Tanjiro, you have a heart full of courage and kindness. Keep shining, my rare XY! :) <3"</p>
+    </section>
+
+    <!-- Chess Section -->
+    <section>
+        <h2>Chess ♟️</h2>
+        <p>To the strategic mind who loves chess – may every move you make lead you closer to victory.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrbJA2TR2S0u2c8K7cdIY5WdkEoGJq2Ugq3EcmOtESK2issFnOoCDFW9c&s=10" alt="Chess">
+        <p class="encouragement">"Life is like a game of chess – plan wisely, stay focused, and never give up. You’ve got this, Baptiste! :) <3"</p>
+    </section>
+
+    <!-- Spider Lily Flower Section -->
+    <section>
+        <h2>Spider Lily Flower 🌸</h2>
+        <p>For the boy who loves the red spider lily – may its beauty remind you of your own uniqueness.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MxRK34_K6pUfdKpGy_9sz57iNJV-YPTmNw&usqp=CAU" alt="Spider Lily">
+        <p class="encouragement">"Just like the spider lily, you’re rare, beautiful, and unforgettable. Never forget your worth, my rare XY. :) <3"</p>
+    </section>
+
+    <!-- Piano Section -->
+    <section>
+        <h2>Piano 🎹</h2>
+        <p>To the boy who loves the piano – may its melodies always bring peace to your soul.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUJ8HwWDSbU_VSG8eGCgPh-bD5QUmKsBYaw&usqp=CAU" alt="Piano">
+        <p class="encouragement">"Your love for music is a reflection of your beautiful soul. Keep playing, Baptiste! :) <3"</p>
+    </section>
+
+    <!-- Interactive Button -->
+    <section>
+        <button id="surpriseBtn">Cliquez pour une surprise ! 🎶</button>
+        <div class="surprise" id="surprise">
+            <img src="https://media.tenor.com/bfp6uu8UZHMAAAAM/adorable-cat.gif" alt="Cute Cat">
+            <p>wish you all the happiness and success my rare xy :)) DON'T EVER BE DEPRESSED AGAIN, AND DON'T TRY WINNING AGAINST ME IN CHESS ᕙ⁠(⁠ ⁠:⁠ ⁠˘⁠ ⁠∧⁠ ⁠˘⁠ ⁠:⁠ ⁠)⁠ᕗ,  I'M & I'LL ALWAYS [BE] BY YOUR SIDE xdd<br>– rare xx</p>
+        </div>
+    </section>
+
+    <!-- Snowflakes -->
+    <div class="snowflakes">
+        <!-- Snowflakes will be generated here -->
+    </div>
+
+    <!-- Audio -->
+    <audio id="newYearAudio">
+        <source src="https://www.dropbox.com/scl/fi/jdoh66d0ofobz4zh0j32p/Sia_-_Snowman_-Official_Video-MP3_160K.mp3?rlkey=1bz0mjk4juogh2su67t6k1sdx&st=av6n3sc5&raw=1" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        const surpriseBtn = document.getElementById('surpriseBtn');
-        const fallingContainer = document.querySelector('.falling');
-        const audio = document.getElementById('snowmanAudio');
-
-        // Generate Falling Snow
+        // Generate Snowflakes
+        const snowflakesContainer = document.querySelector('.snowflakes');
         for (let i = 0; i < 100; i++) {
-            const flake = document.createElement('div');
-            flake.style.left = `${Math.random() * 100}vw`;
-            flake.style.animationDelay = `${Math.random() * 5}s`;
-            flake.style.animationDuration = `${5 + Math.random() * 5}s`;
-            fallingContainer.appendChild(flake);
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = `${Math.random() * 100}vw`;
+            snowflake.style.animationDelay = `${Math.random() * 5}s`;
+            snowflake.style.animationDuration = `${5 + Math.random() * 5}s`;
+            snowflakesContainer.appendChild(snowflake);
         }
 
-        // Button Event
+        // Interactive Button
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const surpriseDiv = document.getElementById('surprise');
+        const audio = document.getElementById('newYearAudio');
+
         surpriseBtn.addEventListener('click', () => {
-            document.querySelector('.surprise').style.display = 'block';
-            // Play audio on button click
-            audio.play().catch(error => {
-                console.log("Autoplay was prevented. Please interact with the page to play audio.");
+            surpriseDiv.style.display = 'block';
+            audio.play().catch((error) => {
+                console.error("Audio playback failed:", error);
+                alert("Click anywhere on the page to allow audio playback.");
             });
         });
 
-        // Try to autoplay audio on page load
-        window.addEventListener('load', () => {
-            audio.play().catch(error => {
-                console.log("Autoplay was prevented. Please interact with the page to play audio.");
+        // Allow audio playback after user interaction
+        document.addEventListener('click', () => {
+            audio.play().catch((error) => {
+                console.error("Audio playback failed:", error);
             });
         });
     </script>
