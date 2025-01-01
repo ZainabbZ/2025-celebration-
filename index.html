@@ -32,12 +32,19 @@
             width: 100%;
             height: 100%;
             background: rgba(34, 24, 19, 0.9); /* Deep brown overlay */
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+            backdrop-filter: blur(10px); /* Increased blur */
             z-index: -1;
         }
 
         header {
-            margin-top: 50px;
+            margin-top: 20px; /* Adjusted margin */
+        }
+
+        .header-image {
+            width: 150px; /* Smaller size */
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px; /* Space between image and heading */
         }
 
         h1 {
@@ -135,6 +142,71 @@
             background-color: #c49a6d; /* Gold background on hover */
             color: #2c2c2c; /* Dark text on hover */
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+        }
+
+        /* Floating Book Shadows */
+        .book-shadow {
+            position: absolute;
+            width: 100px; /* Smaller size */
+            height: 130px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: float 6s infinite ease-in-out;
+            z-index: 0;
+            overflow: hidden; /* Ensure images don't overflow */
+        }
+
+        .book-shadow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4; /* Light opacity for images */
+        }
+
+        .book-shadow:nth-child(1)::before {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR54bjiMz8L7YxKRpvVUdgoK3CIh5QO3jy7HVNrsKQrqPd-A7eGWK-A0gw&s=10'); /* Your image */
+        }
+
+        .book-shadow:nth-child(2)::before {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaBK0LOw1T-slhZHEaHIC3gH9IiQPimDSVJaF-fB7vgvT_2YmBVQWGqAp&s=10'); /* Your image */
+        }
+
+        .book-shadow:nth-child(3)::before {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCJePH5_3W638y4TY8RxUTJ4aRAYp7UKkxZ9eeZyR0mb8UjOiDQoMRbhoo&s=10'); /* Your image */
+        }
+
+        .book-shadow:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .book-shadow:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .book-shadow:nth-child(3) {
+            top: 50%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Snowflakes */
@@ -243,9 +315,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Book Shadows -->
+    <div class="book-shadow"></div>
+    <div class="book-shadow"></div>
+    <div class="book-shadow"></div>
+
     <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmVvrPu7_r-WuyHAI93eCINToqX_vBDmbrls578YgbKi2Ep709Kyd_82Ln&s=10" alt="Vintage Illustration" class="header-image">
         <h1>Bonne Année, Baptiste! 🎉</h1>
-        <p class="subtitle">"To my rare XY – may 2025 be as magical as you are! :) <3"</p>
+        <p class="subtitle">"to rare XY – may 2025 be as magical as you are! :) <3"</p>
     </header>
 
     <!-- Literature Section -->
@@ -313,7 +391,7 @@
 
     <!-- Interactive Button -->
     <section>
-        <button id="surpriseBtn">Cliquez pour une surprise ! 🎶</button>
+        <button id="surpriseBtn">Click for a Surprise! 🎶</button>
         <div class="surprise" id="surprise">
             <img src="https://media.tenor.com/bfp6uu8UZHMAAAAM/adorable-cat.gif" alt="Cute Cat">
             <p>wish you all the happiness and success my rare xy :)) DON'T EVER BE DEPRESSED AGAIN, AND DON'T TRY WINNING AGAINST ME IN CHESS ᕙ⁠(⁠ ⁠:⁠ ⁠˘⁠ ⁠∧⁠ ⁠˘⁠ ⁠:⁠ ⁠)⁠ᕗ,  I'M & I'LL ALWAYS [BE] BY YOUR SIDE xdd<br>– rare xx</p>
