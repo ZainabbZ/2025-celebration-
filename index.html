@@ -227,14 +227,15 @@
     <div class="falling"></div>
 
     <!-- Audio for Snowman -->
-    <audio id="snowmanAudio" autoplay loop>
-        <source src="https://www.dropbox.com/scl/fi/13vetu8t9ga08yy86jdan/snowman-_sia-_snowman-_christmas-_music-_lyrics-_fyp-_viral-MP3.mp3?rlkey=ypg9v3sy07dxqkvy92zedf33g&st=6mgo88bt&dl=1" type="audio/mp3">
+    <audio id="snowmanAudio" loop>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/13vetu8t9ga08yy86jdan/snowman-_sia-_snowman-_christmas-_music-_lyrics-_fyp-_viral-MP3.mp3?rlkey=ypg9v3sy07dxqkvy92zedf33g&st=6mgo88bt&dl=1" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
         const surpriseBtn = document.getElementById('surpriseBtn');
         const fallingContainer = document.querySelector('.falling');
+        const audio = document.getElementById('snowmanAudio');
 
         // Generate Falling Snow
         for (let i = 0; i < 100; i++) {
@@ -248,6 +249,17 @@
         // Button Event
         surpriseBtn.addEventListener('click', () => {
             document.querySelector('.surprise').style.display = 'block';
+            // Play audio on button click
+            audio.play().catch(error => {
+                console.log("Autoplay was prevented. Please interact with the page to play audio.");
+            });
+        });
+
+        // Try to autoplay audio on page load
+        window.addEventListener('load', () => {
+            audio.play().catch(error => {
+                console.log("Autoplay was prevented. Please interact with the page to play audio.");
+            });
         });
     </script>
 </body>
