@@ -178,10 +178,14 @@
                 transform: translateY(110vh);
             }
         }
+
+        /* Hide Audio Element */
+        #snowmanAudio {
+            display: none;
+        }
     </style>
 </head>
 <body> 
-    <iframe src="https://drive.google.com/file/d/1tGHRjsCUIv4bROmyo7JtBL7y0F9fzsbq/preview" width="100%" height="166" frameborder="0" allow="autoplay"></iframe>
     <header>
         <h1>Bonne Année, Baptiste! 🎉 2025</h1>
         <p class="subtitle">“Le bonheur est parfois caché dans l'inconnu.” – Victor Hugo</p>
@@ -227,10 +231,10 @@
     </main>
     <div class="falling"></div>
     
-    <!-- Audio for Snowman -->
+    <!-- Hidden Audio for Snowman -->
     <audio id="snowmanAudio" autoplay loop>
-    <source src="https://drive.google.com/uc?export=download&id=1tGHRjsCUIv4bROmyo7JtBL7y0F9fzsbq" type="audio/mpeg">
-    Your browser does not support the audio element.
+        <source src="https://drive.google.com/uc?export=download&id=1tGHRjsCUIv4bROmyo7JtBL7y0F9fzsbq" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
     
     <script>
